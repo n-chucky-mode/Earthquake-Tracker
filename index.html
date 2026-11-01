@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Sets the character encoding for the webpage -->
+    <meta charset="UTF-8">
+
+    <!-- Makes the page responsive on different screen sizes -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title that appears in the browser tab -->
+    <title>Earthquake & Tectonic Plate Tracker</title>
+
+    <!-- Connects this HTML file to the external CSS file -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- ---------------------------------------------------------
+         HEADER
+         Contains the project title and main navigation.
+    ---------------------------------------------------------- -->
+    <header>
+
+        <h1>Earthquake & Tectonic Plate Tracker</h1>
+
+        <!-- Main navigation links -->
+        <nav>
+            <a href="#map">Map</a>
+            <a href="#earthquakes">Recent Earthquakes</a>
+            <a href="#about">About</a>
+        </nav>
+
+    </header>
+
+
+    <!-- ---------------------------------------------------------
+         MAIN CONTENT
+         Contains all of the main sections of the webpage.
+    ---------------------------------------------------------- -->
+    <main>
+
+
+        <!-- -----------------------------------------------------
+             INTRO SECTION
+             Introduces the purpose of the tracker.
+        ------------------------------------------------------ -->
+        <section id="intro">
+
+            <h2>Track Earthquake Activity Around the World</h2>
+
+            <p>
+                Explore recent earthquake activity, view earthquake locations,
+                and learn more about tectonic plate movement.
+            </p>
+
+        </section>
+
+
+        <!-- -----------------------------------------------------
+             FILTER SECTION
+             Allows users to eventually filter earthquakes
+             based on magnitude.
+        ------------------------------------------------------ -->
+        <section id="filters">
+
+            <h2>Filter Earthquakes</h2>
+
+            <!-- Label for the magnitude dropdown -->
+            <label for="magnitude">Magnitude:</label>
+
+            <!-- Dropdown menu for selecting earthquake magnitude -->
+            <select id="magnitude">
+
+                <option value="all">All Earthquakes</option>
+                <option value="3">Magnitude 3+</option>
+                <option value="5">Magnitude 5+</option>
+                <option value="7">Magnitude 7+</option>
+
+            </select>
+
+        </section>
+
+
+        <!-- -----------------------------------------------------
+             MAP SECTION
+             This placeholder will eventually contain
+             the interactive earthquake map.
+        ------------------------------------------------------ -->
+        <section id="map">
+
+            <h2>Earthquake Map</h2>
+
+            <!-- Temporary map placeholder -->
+            <div class="map-placeholder">
+                Interactive map will be added here.
+            </div>
+
+        </section>
+
+
+        <!-- -----------------------------------------------------
+             RECENT EARTHQUAKES SECTION
+             Displays sample earthquake information.
+             This sample data will later be replaced with
+             live earthquake data.
+        ------------------------------------------------------ -->
+        <section id="earthquakes">
+
+            <h2>Recent Earthquakes</h2>
+
+
+            <!-- Sample earthquake card -->
+            <div class="earthquake-card">
+
+                <h3>Japan</h3>
+
+                <p>Magnitude: 5.8</p>
+
+            </div>
+
+
+            <!-- Sample earthquake card -->
+            <div class="earthquake-card">
+
+                <h3>Alaska</h3>
+
+                <p>Magnitude: 4.9</p>
+
+            </div>
+
+
+            <!-- Sample earthquake card -->
+            <div class="earthquake-card">
+
+                <h3>California</h3>
+
+                <p>Magnitude: 3.6</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- -----------------------------------------------------
+             ABOUT SECTION
+             Explains the purpose of the project.
+        ------------------------------------------------------ -->
+        <section id="about">
+
+            <h2>About This Project</h2>
+
+            <p>
+                This project is being developed to visualize earthquake activity
+                and help users better understand the relationship between
+                earthquakes and tectonic plates.
+            </p>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- ---------------------------------------------------------
+         FOOTER
+         Appears at the bottom of the webpage.
+    ---------------------------------------------------------- -->
+    <footer>
+
+        <p>Earthquake & Tectonic Plate Tracker</p>
+
+    </footer>
+
+
+    <!-- Connects the JavaScript file to the webpage -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
