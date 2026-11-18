@@ -164,3 +164,21 @@ function displayEarthquakes(earthquakes) {
 // ---------------------------------------------------------
 
 getEarthquakes();
+
+
+ // ---------------------------------------------------------
+ // INTERACTIVE EARTHQUAKE MAP
+ // Creates a world map using the Leaflet library.
+ // ---------------------------------------------------------
+
+ // Create the map inside the earthquake-map HTML container.
+ // The coordinates [20, 0] center the map on a world view.
+ // The number 2 sets the starting zoom level.
+ const earthquakeMap = L.map("earthquake-map").setView([20, 0], 2);
+
+ // Add OpenStreetMap tiles to display the world map.
+ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+     attribution: '&copy; OpenStreetMap contributors',
+     maxZoom: 18
+ }).addTo(earthquakeMap);
+
