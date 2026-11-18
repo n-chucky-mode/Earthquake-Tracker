@@ -21,8 +21,6 @@ const magnitudeFilter = document.querySelector("#magnitude");
 // Get the container where earthquake cards will appear.
 const earthquakeContainer = document.querySelector("#earthquake-list");
 
-// Find the container holding the sample cards.
-const earthquakeContainer = earthquakeCards[0]?.parentElement;
 
 // Listen for a change in the dropdown menu.
 magnitudeFilter.addEventListener("change", filterEarthquakes);
