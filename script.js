@@ -67,7 +67,7 @@ function filterEarthquakes() {
 
 // ---------------------------------------------------------
 // FETCH EARTHQUAKE DATA
-// Connects to the USGS using the Fetch API.
+// ********* Connects to the USGS using the Fetch API.***************
 // ---------------------------------------------------------
 
 async function getEarthquakes() {
