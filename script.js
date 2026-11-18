@@ -24,6 +24,7 @@ const earthquakeContainer = document.querySelector("#earthquake-list");
 
 // Listen for a change in the dropdown menu.
 magnitudeFilter.addEventListener("change", filterEarthquakes);
+//****************************************************************************** */
 
 // Filter the cards using the selected magnitude.
 function filterEarthquakes() {
