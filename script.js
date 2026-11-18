@@ -18,8 +18,8 @@ const earthquakeURL =
 // Get the magnitude dropdown from the page.
 const magnitudeFilter = document.querySelector("#magnitude");
 
-// Get the existing sample earthquake cards.
-const earthquakeCards = document.querySelectorAll(".earthquake-card");
+// Get the container where earthquake cards will appear.
+const earthquakeContainer = document.querySelector("#earthquake-list");
 
 // Find the container holding the sample cards.
 const earthquakeContainer = earthquakeCards[0]?.parentElement;
@@ -110,10 +110,8 @@ async function getEarthquakes() {
 
 function displayEarthquakes(earthquakes) {
 
-    // Remove the existing sample earthquake cards.
-    earthquakeCards.forEach(function (card) {
-        card.remove();
-    });
+    // Clear the loading message before displaying earthquakes.
+    earthquakeContainer.replaceChildren();
 
     // Display the 10 most recent reported earthquakes.
     earthquakes.slice(0, 10).forEach(function (earthquake) {
