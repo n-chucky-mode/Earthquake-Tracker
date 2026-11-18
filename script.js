@@ -97,8 +97,10 @@ async function getEarthquakes() {
 
         // Display an error if the data cannot be retrieved.
         console.error("Error loading earthquakes:", error);
-
-        // Keep the sample cards visible if the request fails.
+    
+        // Show a message on the webpage if the request fails.
+        earthquakeContainer.textContent =
+            "Unable to load earthquake data. Please try again later.";
     }
 }
 
