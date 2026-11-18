@@ -158,9 +158,19 @@
 
     </footer>
 
-    <!-- This loads the actual mapping functionality -->
-    <!-- Leaflet JavaScript library for the interactive map -->
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+<!-- ---------------------------------------------------------
+     JAVASCRIPT FILES
+     Leaflet loads first so our JavaScript can use its
+     interactive mapping features.
+---------------------------------------------------------- -->
+
+<!-- Loads the Leaflet mapping library -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<!-- Loads our earthquake data and filtering JavaScript -->
+<script src="script.js"></script>
+
 
     
 
