@@ -92,6 +92,8 @@ async function getEarthquakes() {
 
         // Display the earthquakes on the page.
         displayEarthquakes(data.features);
+        // Display earthquake locations on the interactive map.
+        displayEarthquakeMarkers(data.features);
 
     } catch (error) {
 
@@ -193,7 +195,7 @@ const earthquakeMap = L.map("earthquake-map").setView([20, 0], 2);
 
  // ---------------------------------------------------------
  // EARTHQUAKE MAP MARKERS
- // Displays real earthquake locations on the Leaflet map.
+ // Should display real earthquake locations on the Leaflet map.
  // ---------------------------------------------------------
 
  function displayEarthquakeMarkers(earthquakes) {
