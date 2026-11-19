@@ -174,11 +174,78 @@ getEarthquakes();
  // Create the map inside the earthquake-map HTML container.
  // The coordinates [20, 0] center the map on a world view.
  // The number 2 sets the starting zoom level.
- const earthquakeMap = L.map("earthquake-map").setView([20, 0], 2);
+ // L.map() creates the interactive map.
+
+
+//-- setView([20, 0], 2) determines its initial position and zoom.
+//-- L.tileLayer() adds the geographic map imagery.
+//-- .addTo(earthquakeMap) displays that imagery on map.
+const earthquakeMap = L.map("earthquake-map").setView([20, 0], 2);
 
  // Add OpenStreetMap tiles to display the world map.
  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
      attribution: '&copy; OpenStreetMap contributors',
      maxZoom: 18
  }).addTo(earthquakeMap);
+
+ //now attempt to connect earthquake data from usgs to the leaflet map so 
+ //visitors cam see where the earthquake occurred. 
+
+ // ---------------------------------------------------------
+ // EARTHQUAKE MAP MARKERS
+ // Displays real earthquake locations on the Leaflet map.
+ // ---------------------------------------------------------
+
+ function displayEarthquakeMarkers(earthquakes) {
+
+    // Loop through each earthquake from the USGS data.
+    earthquakes.forEach(function (earthquake) {
+
+        // Get the earthquake magnitude and location.
+        const magnitude = earthquake.properties.mag;
+        const location = earthquake.properties.place;
+
+        // USGS provides coordinates as:
+        // [longitude, latitude, depth]
+        const coordinates = earthquake.geometry.coordinates;
+
+        // Get the latitude and longitude for Leaflet.
+        const latitude = coordinates[1];
+        const longitude = coordinates[0];
+
+        // Skip earthquakes without valid coordinates.
+        if (!Number.isFinite(latitude) ||
+            !Number.isFinite(longitude)) {
+            return;
+        }
+
+        // Create a circular marker at the earthquake location.
+        const marker = L.circleMarker([latitude, longitude], {
+            radius: 6,
+            color: "#486B55",
+            fillColor: "#486B55",
+            fillOpacity: 0.7
+        });
+
+        // Create a popup containing earthquake details.
+        const popup = document.createElement("div");
+
+        const heading = document.createElement("strong");
+        heading.textContent = location || "Unknown location";
+
+        const details = document.createElement("p");
+        details.textContent =
+            "Magnitude: " +
+            (typeof magnitude === "number"
+                ? magnitude.toFixed(1)
+                : "Unknown");
+
+        popup.appendChild(heading);
+        popup.appendChild(details);
+
+        // Attach the popup and marker to the map.
+        marker.bindPopup(popup);
+        marker.addTo(earthquakeMap);
+    });
+}
 
