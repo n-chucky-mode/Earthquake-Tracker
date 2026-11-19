@@ -37,6 +37,10 @@ nav a {
     color: #9fc5a8;
     margin: 0 12px;
     text-decoration: none;
+    /*makes the green nav bolder. might change color depeding on 
+    feedback*/
+    font-size: 18px;
+    font-weight: 700;
 }
 
 
