@@ -16,7 +16,7 @@ body {
    Styles the top section of the page.
 --------------------------------------------------------- */
 header {
-    background-color: #111411;
+    background-color: #a9c4a9;
     padding: 24px;
     text-align: center;
 }
@@ -34,7 +34,7 @@ header h1 {
    Styles the links inside the navigation menu.
 --------------------------------------------------------- */
 nav a {
-    color: #9fc5a8;
+    color: #2c372e;
     margin: 0 12px;
     text-decoration: none;
     /*makes the green nav bolder. might change color depeding on 
